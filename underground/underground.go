@@ -22,14 +22,15 @@ var Underground = &hal.Handler{
 		resp, err := client.Execute(&request)
 		if err != nil {
 			fmt.Println(err)
-			return
+			return err
 		}
 
 		if resp.CurrentConditions == nil {
 			fmt.Println("The current conditions were not returned. Is the API key correct?")
-			return
+			return err
 		}
 
-		return res.Send("       Temperature: %6.1f C (feels like %2.1f C)\n", resp.CurrentConditions.TempC, resp.CurrentConditions.FeelsLikeC)
+		returnString := fmt.Sprintf("       Temperature: %6.1f C (feels like %2.1f C)\n", resp.CurrentConditions.TempC, resp.CurrentConditions.FeelsLikeC)
+		return res.Send(returnString)
 	},
 }
