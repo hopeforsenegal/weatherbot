@@ -8,10 +8,10 @@ import (
 	"os"
 )
 
-// HAL is just another Go package, which means you are free to organize things
-// however you deem best.
+// Key
+const kWeatherAPIKey = "ac29d0ab5aa732b4"
 
-// You can define your handlers in the same file...
+// Handlers
 var weatherHandler = hal.Hear(`weather`, func(res *hal.Response) error {
 	return res.Send("Its cold outside")
 })
