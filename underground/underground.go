@@ -1,9 +1,9 @@
 package underground
 
 import (
-	"github.com/greyfocus/go-wunderground-api"
-	"github.com/danryan/hal"
 	"fmt"
+	"github.com/danryan/hal"
+	"github.com/greyfocus/go-wunderground-api"
 )
 
 // Key
