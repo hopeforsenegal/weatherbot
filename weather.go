@@ -15,6 +15,10 @@ var weatherHandler = hal.Hear(`weather`, func(res *hal.Response) error {
 	return res.Send("Its cold outside")
 })
 
+var gloatHandler = hal.Hear(`gloat`, func(res *hal.Response) error {
+	return res.Send("Kamau is a boss. Or at least he tries to be")
+})
+
 var echoHandler = hal.Hear(`echo (.+)`, func(res *hal.Response) error {
 	return res.Reply(res.Match[1])
 })
@@ -28,6 +32,7 @@ func run() int {
 
 	robot.Handle(
 		echoHandler,
+		gloatHandler,
 		handler.TableFlip,
 		weatherHandler,
 		underground.Underground,
