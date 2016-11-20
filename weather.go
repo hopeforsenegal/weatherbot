@@ -1,13 +1,13 @@
 package main
 
 import (
+	"fmt"
 	"github.com/danryan/hal"
 	_ "github.com/danryan/hal/adapter/shell"
 	"github.com/danryan/hal/handler"
 	_ "github.com/danryan/hal/store/memory"
-	"os"
-	"fmt"
 	"github.com/hopeforsenegal/weatherbot/underground"
+	"os"
 )
 
 // Handlers
@@ -16,13 +16,13 @@ var weatherHandler = hal.Hear(`weather`, func(res *hal.Response) error {
 })
 
 var quitFlipHandler = &hal.Handler{
-		Method:  hal.HEAR,
-		Pattern: `quit`,
-		Run: func(res *hal.Response) error {
-			fmt.Println("Told to quit")
-			return res.Robot.Stop()
-		},
-	}
+	Method:  hal.HEAR,
+	Pattern: `quit`,
+	Run: func(res *hal.Response) error {
+		fmt.Println("Told to quit")
+		return res.Robot.Stop()
+	},
+}
 
 func run() int {
 	robot, err := hal.NewRobot()
