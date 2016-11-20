@@ -8,7 +8,7 @@ import (
 
 // Key
 const WeatherAPIKey = "ac29d0ab5aa732b4"
-const CurrentLocation = "France/Paris"
+const CurrentLocation = "TX/Austin"
 
 // TableFlip is an example of a Handler
 var Underground = &hal.Handler{
@@ -30,7 +30,7 @@ var Underground = &hal.Handler{
 			return err
 		}
 
-		returnString := fmt.Sprintf("       Temperature: %6.1f C (feels like %2.1f C)\n", resp.CurrentConditions.TempC, resp.CurrentConditions.FeelsLikeC)
+		returnString := fmt.Sprintf("%s       Temperature: %6.1f C (feels like %2.1f C)\n", CurrentLocation, resp.CurrentConditions.TempC, resp.CurrentConditions.FeelsLikeC)
 		return res.Send(returnString)
 	},
 }

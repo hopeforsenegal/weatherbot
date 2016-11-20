@@ -15,14 +15,9 @@ var weatherHandler = hal.Hear(`weather`, func(res *hal.Response) error {
 	return res.Send("Its cold outside")
 })
 
-var quitFlipHandler = &hal.Handler{
-	Method:  hal.HEAR,
-	Pattern: `quit`,
-	Run: func(res *hal.Response) error {
-		fmt.Println("Told to quit")
-		return res.Robot.Stop()
-	},
-}
+var echoHandler = hal.Hear(`echo (.+)`, func(res *hal.Response) error {
+	return res.Reply(res.Match[1])
+})
 
 func run() int {
 	robot, err := hal.NewRobot()
@@ -32,10 +27,13 @@ func run() int {
 	}
 
 	robot.Handle(
-		weatherHandler,
+		echoHandler,
 		handler.TableFlip,
+		weatherHandler,
 		underground.Underground,
 	)
+
+	defer fmt.Println("Terminating")
 
 	if err := robot.Run(); err != nil {
 		hal.Logger.Error(err)
