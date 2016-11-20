@@ -1,0 +1,43 @@
+{
+	"ImportPath": "github.com/hopeforsenegal/weatherbot",
+	"GoVersion": "go1.7",
+	"GodepVersion": "v75",
+	"Packages": [
+		"github.com/hopeforsenegal/weatherbot"
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/Sirupsen/logrus",
+			"Comment": "v0.11.0-10-ga437dfd",
+			"Rev": "a437dfd2463eaedbec3dfe443e477d3b0a810b3f"
+		},
+		{
+			"ImportPath": "github.com/danryan/env",
+			"Rev": "bc567f4d372a17eb756004cdbfd8458ecc04b07e"
+		},
+		{
+			"ImportPath": "github.com/danryan/hal",
+			"Rev": "c4a180833c0b8fd4f4f5c6fcaa611b8cb72c23c7"
+		},
+		{
+			"ImportPath": "github.com/danryan/hal/adapter/shell",
+			"Rev": "c4a180833c0b8fd4f4f5c6fcaa611b8cb72c23c7"
+		},
+		{
+			"ImportPath": "github.com/danryan/hal/handler",
+			"Rev": "c4a180833c0b8fd4f4f5c6fcaa611b8cb72c23c7"
+		},
+		{
+			"ImportPath": "github.com/danryan/hal/store/memory",
+			"Rev": "c4a180833c0b8fd4f4f5c6fcaa611b8cb72c23c7"
+		},
+		{
+			"ImportPath": "github.com/greyfocus/go-wunderground-api",
+			"Rev": "40cf85b0b91ebfca3b7ec95cf2266fe0fc4512a9"
+		},
+		{
+			"ImportPath": "golang.org/x/sys/unix",
+			"Rev": "b699b7032584f0953262cb2788a0ca19bb494703"
+		}
+	]
+}
