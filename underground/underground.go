@@ -10,7 +10,7 @@ import (
 const WeatherAPIKey = "ac29d0ab5aa732b4"
 const CurrentLocation = "TX/Austin"
 
-// TableFlip is an example of a Handler
+// Returns the conditions in a certain type of weather
 var Underground = &hal.Handler{
 	Method:  hal.HEAR,
 	Pattern: `underground`,
